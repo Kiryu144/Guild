@@ -5,6 +5,7 @@ import de.mevidia.kiryu144.guild.guild.GuildBalance;
 import de.mevidia.kiryu144.guild.guild.GuildInstance;
 import de.mevidia.kiryu144.guild.guild.GuildPlayer;
 import de.mevidia.kiryu144.guild.guild.Guilds;
+import org.bukkit.Bukkit;
 import org.bukkit.configuration.serialization.ConfigurationSerialization;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -20,6 +21,7 @@ public class Guild extends JavaPlugin {
         ConfigurationSerialization.registerClass(GuildBalance.class);
         ConfigurationSerialization.registerClass(GuildPlayer.class);
         ConfigurationSerialization.registerClass(GuildInstance.class);
+        Bukkit.getPluginManager().registerEvents(guilds, this);
 
         guilds.loadAll();
 

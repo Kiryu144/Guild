@@ -4,13 +4,16 @@ import de.mevidia.kiryu144.guild.Guild;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.player.AsyncPlayerChatEvent;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.UUID;
 
-public class Guilds {
+public class Guilds implements Listener {
     protected HashMap<String, GuildInstance> shortReference;
     protected HashMap<UUID, GuildInstance> playerGuilds;
 
@@ -96,5 +99,11 @@ public class Guilds {
         return shortReference.get(shortname.toLowerCase());
     }
 
-
+    @EventHandler
+    public void onPlayerChat(AsyncPlayerChatEvent event){
+        GuildInstance guild = getGuild(event.getPlayer());
+        if(guild != null){
+            event.setFormat("§7[§a" + guild.getShortname().toUpperCase() + "§7]§r" + event.getFormat());
+        }
+    }
 }
