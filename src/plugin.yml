@@ -1,0 +1,7 @@
+name: Guild
+version: 1.0
+main: de.mevidia.kiryu144.guild.Guild
+authors: ["Kiryu144"]
+softdepend: ["Vault"]
+commands:
+  guild:
