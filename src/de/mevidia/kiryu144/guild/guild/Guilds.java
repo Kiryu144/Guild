@@ -106,9 +106,9 @@ public class Guilds implements Listener {
 
     @EventHandler
     public void onPlayerChat(AsyncPlayerChatEvent event){
-        GuildInstance guild = getGuild(event.getPlayer());
-        if(guild != null){
-            event.setFormat("§7[§a" + guild.getShortname().toUpperCase() + "§7]§r" + event.getFormat());
-        }
+        //GuildInstance guild = getGuild(event.getPlayer());
+        //if(guild != null){
+        //    event.setFormat("§7[§a" + guild.getShortname().toUpperCase() + "§7]§r" + event.getFormat());
+        //}
     }
 }

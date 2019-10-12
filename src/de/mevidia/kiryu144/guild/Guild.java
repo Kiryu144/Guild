@@ -1,10 +1,7 @@
 package de.mevidia.kiryu144.guild;
 
 import de.mevidia.kiryu144.guild.command.GuildCommands;
-import de.mevidia.kiryu144.guild.guild.GuildBalance;
-import de.mevidia.kiryu144.guild.guild.GuildInstance;
-import de.mevidia.kiryu144.guild.guild.GuildPlayer;
-import de.mevidia.kiryu144.guild.guild.Guilds;
+import de.mevidia.kiryu144.guild.guild.*;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.serialization.ConfigurationSerialization;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -26,5 +23,9 @@ public class Guild extends JavaPlugin {
         guilds.loadAll();
 
         getCommand("guild").setExecutor(new GuildCommands());
+
+        if(Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null){
+            new Placeholder().register();
+        }
     }
 }
