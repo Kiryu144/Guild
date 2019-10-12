@@ -28,6 +28,10 @@ public class GuildPlayer implements ConfigurationSerializable {
         return isAdmin;
     }
 
+    public void setAdmin(boolean admin) {
+        isAdmin = admin;
+    }
+
     @Override
     public Map<String, Object> serialize() {
         Map<String, Object> serialize = new HashMap<>();

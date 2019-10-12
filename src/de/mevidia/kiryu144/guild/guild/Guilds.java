@@ -42,6 +42,11 @@ public class Guilds implements Listener {
         }
     }
 
+    public void joinGuild(GuildInstance guild, UUID uuid){
+        guild.getPlayers().add(new GuildPlayer(uuid, false));
+        playerGuilds.put(uuid, guild);
+    }
+
     public void leaveGuild(UUID uuid){
         GuildInstance guild = Guild.guilds.getGuild(uuid);
         guild.getPlayers().remove(guild.getPlayer(uuid));
