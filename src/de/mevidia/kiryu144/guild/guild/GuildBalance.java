@@ -16,6 +16,10 @@ public class GuildBalance implements ConfigurationSerializable {
         this.balance = (Double) serialization.getOrDefault("balance", 0D);
     }
 
+    public double getBalance() {
+        return balance;
+    }
+
     @Override
     public Map<String, Object> serialize() {
         Map<String, Object> data = new HashMap<>();

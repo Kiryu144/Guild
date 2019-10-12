@@ -50,7 +50,7 @@ public class Placeholder extends PlaceholderExpansion {
         if(identifier.equalsIgnoreCase("balance")){
             GuildInstance guild = Guild.guilds.getGuild(p.getUniqueId());
             if(guild != null){
-                return guild.getGuildBalance().toString();
+                return String.valueOf(Math.round(guild.getGuildBalance().getBalance()));
             }else{
                 return "0";
             }
