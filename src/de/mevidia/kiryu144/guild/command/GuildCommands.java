@@ -117,6 +117,7 @@ public class GuildCommands implements CommandExecutor {
             return;
         }
 
+        //TODO: Add message
         Guild.guilds.leaveGuild(caller.getUniqueId());
         save(guild, caller);
     }
@@ -140,7 +141,8 @@ public class GuildCommands implements CommandExecutor {
             return;
         }
 
-        invited.sendMessage(String.format("§bDu wurdest in die Gilde '%s' eingeladen. Um der Gilde beizutreten gib '/guilds join %s' ein!", guild.getName(), guild.getShortname()));
+        guild.getInvitedPlayers().add(invitedUUID);
+        invited.sendMessage(String.format("§bDu wurdest in die Gilde '%s' eingeladen. Um der Gilde beizutreten gib '/guild join %s' ein!", guild.getName(), guild.getShortname()));
         caller.sendMessage("§bEinladung verschickt!");
     }
 

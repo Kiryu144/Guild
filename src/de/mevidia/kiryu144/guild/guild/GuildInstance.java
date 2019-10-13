@@ -20,6 +20,7 @@ public class GuildInstance implements ConfigurationSerializable {
         this.shortname = shortname.toLowerCase();
         this.guildBalance = guildBalance;
         this.players = new ArrayList<>();
+        this.invited = new ArrayList<>();
     }
 
     public GuildInstance(Map<String, Object> serialization){
@@ -29,6 +30,7 @@ public class GuildInstance implements ConfigurationSerializable {
         this.players = (List<GuildPlayer>) serialization.getOrDefault("players", new ArrayList<GuildPlayer>());
         this.isPublic = (boolean) serialization.getOrDefault("is_public", false);
         this.spawnLocation = (Location) serialization.getOrDefault("spawn_location", null);
+        this.invited = new ArrayList<>();
     }
 
     public String getName() {
